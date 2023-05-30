@@ -10,4 +10,9 @@
         (#{title},#{ctnt},#{iuser})
 
     </insert>
+    <select id="selBoard" resultType="BoardSelDto">
+        select iboard,title,ctnt,iuser,created_at createdAt
+        from t_board
+        Limit #{startIdx},#{row}
+    </select>
 </mapper>
