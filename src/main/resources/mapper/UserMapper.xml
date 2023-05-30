@@ -15,9 +15,10 @@
         from t_user
         where uid = #{uid};
     </select>
+
     <update id="PwUser">
         update t_user
-        set upw = #{upw},
+        set upw = #{upw}
         where iuser = #{iuser}
     </update>
 
