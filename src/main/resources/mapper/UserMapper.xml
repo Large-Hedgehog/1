@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.green.boardver4.">
+    <insert id="UserIns" parameterType="UserInsDto">
+        insert into t_user
+        (uid,upw,nm,gender,addr,main_pic)
+        values
+        (#{uid},#{upw},#{nm},#{gender},#{addr},#{main_pic})
+    </insert>
+<!--    <update id="Userupdate" parameterType="UserDto">-->
+<!--        update t_user-->
+<!--        set uid = #{uid},-->
+<!--        upw = #{upw},-->
+<!--        nm = #{nm},-->
+<!--        gender = #{gender},-->
+<!--        addr = #{addr},-->
+<!--        main_pic = #{main_pic}-->
+<!--        where iuser = #{iuser}-->
+<!--    </update>-->
+<!--    <delete id="Userdel" parameterType="UserDto">-->
+<!--        delete from t_user-->
+<!--        where iuser = #{iuser}-->
+<!--    </delete>-->
+
+
+
+
+</mapper>
