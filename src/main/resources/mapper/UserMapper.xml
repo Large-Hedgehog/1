@@ -10,10 +10,10 @@
         (#{uid},#{upw},#{nm},#{gender},#{addr})
     </insert>
 
-    <select id="UserSel" resultType="UserLoginDto">
-        select uid,upw,nm,gender,addr from t_user
-        where uid = #{uid}, upw = #{upw};
-
+    <select id="selUserByUid" resultType="UserLoginVo">
+        select iuser, uid, upw, nm, gender, addr, main_pic
+        from t_user
+        where uid = #{uid};
     </select>
 <!--    <update id="Userupdate" parameterType="UserDto">-->
 <!--        update t_user-->
