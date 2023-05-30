@@ -15,19 +15,12 @@
         from t_user
         where uid = #{uid};
     </select>
-<!--    <update id="Userupdate" parameterType="UserDto">-->
-<!--        update t_user-->
-<!--        set uid = #{uid},-->
-<!--        upw = #{upw},-->
-<!--        nm = #{nm},-->
-<!--        gender = #{gender},-->
-<!--        addr = #{addr},-->
-<!--        main_pic = #{main_pic}-->
-<!--        where iuser = #{iuser}-->
-<!--    </update>-->
-<!--    <delete id="Userdel" parameterType="UserDto">-->
-<!--        delete from t_user-->
-<!--        where iuser = #{iuser}-->
-<!--    </delete> dd-->
+    <update id="PwUser" parameterType="UserPwDto">
+        update t_user
+        set upw = #{upw},
+        updated_at= current_timestamp()
+        where iuser = #{iuser}
+
+    </update>
 
 </mapper>
