@@ -1,5 +1,6 @@
 package com.green.boardver4.user;
 import com.green.boardver4.user.model.UserInsDto;
+import com.green.boardver4.user.model.UserLoginDto;
 import com.green.boardver4.utils.CommonUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,5 +30,10 @@ public class UserController {
     public int boardPost(@RequestBody UserInsDto dto) {
 
         return service.UserIns(dto);
+    }
+
+    @PostMapping("/login")
+    public int postLoginUser(@RequestBody UserLoginDto dto){
+        return 0;
     }
 }
