@@ -1,5 +1,6 @@
 package com.green.boardver4.user;
 import com.green.boardver4.user.model.UserInsDto;
+import com.green.boardver4.utils.CommonUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,6 +27,7 @@ public class UserController {
             "gender\": [1] m:남자 f:여자 \", <br>"+
             "addr\": [100] 주소")
     public int boardPost(@RequestBody UserInsDto dto) {
+
         return service.UserIns(dto);
     }
 }
