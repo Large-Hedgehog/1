@@ -18,6 +18,7 @@ public class UserService {
     }
 
     public int UserIns(UserInsDto dto) {
+
         String hashPw = CommonUtils.encodeSha256(dto.getUpw());
         dto.setUpw(hashPw);
         return mapper.UserIns(dto);
