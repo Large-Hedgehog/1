@@ -18,9 +18,23 @@ public class UserService {
     }
 
     public int UserIns(UserInsDto dto) {
+        //성별 항상 소문자로 변경
+        char gender = Character.toLowerCase(dto.getGender());
+        if(!(gender=='m' || gender == 'f')){
+            return -1;
+        }
+        dto.setGender(gender);
 
+        //비밀번호 암호화
         String hashPw = CommonUtils.encodeSha256(dto.getUpw());
         dto.setUpw(hashPw);
-        return mapper.UserIns(dto);
+
+        try {
+            return mapper.UserIns(dto);
+        } catch (Exception e){
+            e.printStackTrace();
+            return 0;
+        }
+
     }
 }
