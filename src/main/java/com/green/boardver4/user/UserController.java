@@ -2,7 +2,6 @@ package com.green.boardver4.user;
 import com.green.boardver4.user.model.UserInsDto;
 import com.green.boardver4.user.model.UserLoginDto;
 import com.green.boardver4.user.model.UserPwDto;
-import com.green.boardver4.utils.CommonUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +19,7 @@ public class UserController {
 
     @PostMapping
     @Operation(
-            summary = "회원가입", description = ""+
+            summary = "회원가입", description = " "+
             "uid\": [20] 회원 아이디\", <br>"+
             "upw\": [100] 회원 비밀번호\", <br>"+
             "nm\": [30] 회원 이름\", <br>"+
@@ -33,7 +32,7 @@ public class UserController {
 
     //로그인
     @PostMapping("/login")
-    @Operation(summary = "로그인", description = "" +
+    @Operation(summary = "로그인", description = " " +
             "리턴값:" +
             "(1)로그인 성공, " +
             "(2)아이디 없음, " +
