@@ -2,12 +2,12 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.green.boardver4.UserMapper">
+<mapper namespace="com.green.boardver4.user.UserMapper">
     <insert id="UserIns" parameterType="UserInsDto">
         insert into t_user
-        (uid,upw,nm,gender,addr,main_pic)
+        (uid,upw,nm,gender,addr)
         values
-        (#{uid},#{upw},#{nm},#{gender},#{addr},#{main_pic})
+        (#{uid},#{upw},#{nm},#{gender},#{addr})
     </insert>
 <!--    <update id="Userupdate" parameterType="UserDto">-->
 <!--        update t_user-->

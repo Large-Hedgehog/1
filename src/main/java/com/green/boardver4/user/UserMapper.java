@@ -1,4 +1,4 @@
-package com.green.boardver4;
+package com.green.boardver4.user;
 import com.green.boardver4.user.model.UserInsDto;
 import org.apache.ibatis.annotations.Mapper;
 @Mapper

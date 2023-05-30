@@ -7,5 +7,4 @@ public class UserInsDto {
     private String nm;
     private Character gender;
     private String addr;
-    private String main_pic;
 }
