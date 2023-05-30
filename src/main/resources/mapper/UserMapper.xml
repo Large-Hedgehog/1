@@ -28,7 +28,7 @@
 <!--    <delete id="Userdel" parameterType="UserDto">-->
 <!--        delete from t_user-->
 <!--        where iuser = #{iuser}-->
-<!--    </delete>-->
+<!--    </delete> dd-->
 
 
 
