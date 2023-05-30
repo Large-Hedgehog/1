@@ -9,6 +9,12 @@
         values
         (#{uid},#{upw},#{nm},#{gender},#{addr})
     </insert>
+
+    <select id="UserSel" resultType="UserLoginDto">
+        select uid,upw,nm,gender,addr from t_user
+        where uid = #{uid}, upw = #{upw};
+
+    </select>
 <!--    <update id="Userupdate" parameterType="UserDto">-->
 <!--        update t_user-->
 <!--        set uid = #{uid},-->
