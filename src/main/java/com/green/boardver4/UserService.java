@@ -13,8 +13,8 @@ public class UserService {
         this.mapper = mapper;
     }
 
-    public int insUser(UserInsDto dto) {
-        return mapper.insUser(dto);
+    public int UserIns(UserInsDto dto) {
+        return mapper.UserIns(dto);
 
     }
 }
