@@ -2,14 +2,13 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.green.boardver4.">
+<mapper namespace="com.green.boardver4.UserMapper">
     <insert id="UserIns" parameterType="UserInsDto">
         insert into t_user
         (uid,upw,nm,gender,addr,main_pic)
         values
         (#{uid},#{upw},#{nm},#{gender},#{addr},#{main_pic})
     </insert>
-    <!--123123  -->
 <!--    <update id="Userupdate" parameterType="UserDto">-->
 <!--        update t_user-->
 <!--        set uid = #{uid},-->
