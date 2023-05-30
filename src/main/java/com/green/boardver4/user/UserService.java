@@ -2,6 +2,7 @@ package com.green.boardver4.user;
 import com.green.boardver4.user.model.UserInsDto;
 import com.green.boardver4.user.model.UserLoginDto;
 import com.green.boardver4.user.model.UserLoginVo;
+import com.green.boardver4.user.model.UserPwDto;
 import com.green.boardver4.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -35,5 +36,11 @@ public class UserService {
            return 1;
        }
        return 0;
+    }
+
+    public int PwUser(UserPwDto dto){
+        String hashedPw = commonUtils.encodeSha256(dto.getUpw());
+        dto.setUpw(hashedPw);
+        return mapper.PwUser(dto);
     }
 }

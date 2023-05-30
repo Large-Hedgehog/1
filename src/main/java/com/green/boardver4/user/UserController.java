@@ -1,13 +1,12 @@
 package com.green.boardver4.user;
 import com.green.boardver4.user.model.UserInsDto;
 import com.green.boardver4.user.model.UserLoginDto;
+import com.green.boardver4.user.model.UserPwDto;
 import com.green.boardver4.utils.CommonUtils;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -41,5 +40,11 @@ public class UserController {
             "(3)비밀번호 다름, ")
     public int postLoginUser(@RequestBody UserLoginDto dto){
         return service.login(dto);
+    }
+
+    // 비밀번호 수정
+    @PatchMapping("/pw")
+    public int patchPwUser(@RequestBody UserPwDto dto){
+        return service.PwUser(dto);
     }
 }
