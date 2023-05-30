@@ -9,11 +9,12 @@ public class UserService {
     private final UserMapper mapper;
 
     @Autowired
-    public UserService(UserMapper mapper){
+    public UserService(UserMapper mapper) {
         this.mapper = mapper;
     }
 
-    public int insUser(UserInsDto dto){
+    public int insUser(UserInsDto dto) {
         return mapper.insUser(dto);
 
+    }
 }

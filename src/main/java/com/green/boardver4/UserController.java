@@ -1,5 +1,6 @@
 package com.green.boardver4;
 import com.green.boardver4.user.model.UserInsDto;
+import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
