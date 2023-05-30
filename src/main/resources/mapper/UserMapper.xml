@@ -9,6 +9,7 @@
         values
         (#{uid},#{upw},#{nm},#{gender},#{addr},#{main_pic})
     </insert>
+    <!--123123  -->
 <!--    <update id="Userupdate" parameterType="UserDto">-->
 <!--        update t_user-->
 <!--        set uid = #{uid},-->
