@@ -15,10 +15,10 @@
         from t_user
         where uid = #{uid};
     </select>
-    <update id="PwUser">
+    <update id="PwUser" parameterType="UserPwDto">
         update t_user
-        set upw = #{upw},
-        where iuser = #{iuser}
+        set upw = #{upw}
+        where iuser = ${iuser}
     </update>
 
 </mapper>
