@@ -11,7 +11,7 @@
     </insert>
 
     <select id="selUserByUid" resultType="UserLoginVo">
-        select iuser, uid, upw, nm, gender, addr, main_pic
+        select iuser, uid, upw, nm, gender, addr, main_pic mainPic
         from t_user
         where uid = #{uid};
     </select>
@@ -29,8 +29,5 @@
 <!--        delete from t_user-->
 <!--        where iuser = #{iuser}-->
 <!--    </delete> dd-->
-
-
-
 
 </mapper>

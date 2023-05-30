@@ -1,6 +1,7 @@
 package com.green.boardver4.user;
 import com.green.boardver4.user.model.UserInsDto;
 import com.green.boardver4.user.model.UserLoginDto;
+import com.green.boardver4.user.model.UserLoginVo;
 import com.green.boardver4.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -20,12 +21,19 @@ public class UserService {
 
     public int UserIns(UserInsDto dto) {
 
-        String hashPw = CommonUtils.encodeSha256(dto.getUpw());
-        dto.setUpw(hashPw);
+        String hashedPw = CommonUtils.encodeSha256(dto.getUpw());
+        dto.setUpw(hashedPw);
         return mapper.UserIns(dto);
     }
 
     public int login(UserLoginDto dto){
-        return 0;
+        UserLoginVo vo = mapper.selUserByUid(dto);
+
+       if(vo == null){ return 2; }
+       String hashedPw = commonUtils.encodeSha256(dto.getUpw());
+       if(vo.getUpw().equals(hashedPw)){
+           return 1;
+       }
+       return 0;
     }
 }
