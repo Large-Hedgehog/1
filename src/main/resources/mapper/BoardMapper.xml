@@ -31,12 +31,11 @@
         WHERE iboard = ${iboard}
     </select>
 
-    <update id="updateBoard">
+    <update id="updateBoard" parameterType="BoardUpdateDto">
         UPDATE t_board
         SET title = #{title}
         , ctnt = #{ctnt}
         , iuser = ${iuser}
-        , create_at = #{create_at}
         , updated_at = current_timestamp()
         WHERE iboard = ${iboard}
     </update>

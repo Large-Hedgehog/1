@@ -45,12 +45,16 @@ public class BoardController {
         dto.setIboard(iboard);
         return service.getBoardDetail(dto);
     }
-
     @DeleteMapping
     public int deleteBoard (@RequestParam int iboard, @RequestParam int iuser){
         BoardDetail dto = new BoardDetail();
         dto.setIboard(iboard);
         dto.setIuser(iuser);
         return service.deleteBoard(dto);
+    }
+
+    @PutMapping
+    public int updateBoard(@RequestBody BoardUpdateDto dto){
+        return service.updateBoard(dto);
     }
 }

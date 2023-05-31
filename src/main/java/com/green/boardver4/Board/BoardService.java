@@ -33,6 +33,9 @@ public class BoardService {
     public BoardDetail getBoardDetail(BoardDetail detail){
         return mapper.selBoardDetail(detail);
     }
+    public int updateBoard (BoardUpdateDto dto){
+        return mapper.updateBoard(dto);
+    }
 
     public int deleteBoard(BoardDetail dto){
         return mapper.deleteBoard(dto);
