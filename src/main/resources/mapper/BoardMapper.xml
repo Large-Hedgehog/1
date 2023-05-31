@@ -12,7 +12,7 @@
 
     <select id="selBoard" resultType="BoardSelDto">
         select A.iboard, A.title, A.created_at createdAt
-        , B.nm writer
+        , B.nm writer , B.main_pic writerMainPic
         FROM t_board A
         INNER JOIN t_user B
         ON A.iuser = B.iuser
