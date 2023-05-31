@@ -35,7 +35,8 @@
         UPDATE t_board
         SET title = #{title}
         , ctnt = #{ctnt}
-        , writer = #{writer}
+        , iuser = ${iuser}
+        , create_at = #{create_at}
         , updated_at = current_timestamp()
         WHERE iboard = ${iboard}
     </update>
