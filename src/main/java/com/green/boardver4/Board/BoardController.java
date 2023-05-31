@@ -1,10 +1,7 @@
 package com.green.boardver4.Board;
 
 
-import com.green.boardver4.Board.model.BoardDto;
-import com.green.boardver4.Board.model.BoardInsDto;
-import com.green.boardver4.Board.model.BoardSelDto;
-import com.green.boardver4.Board.model.BoardVo;
+import com.green.boardver4.Board.model.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +32,11 @@ public class BoardController {
         dto.setPage(page);
         dto.setRow(row);
         return service.selBoard(dto);
+    }
+
+    @GetMapping("/maxpage")
+    public int boardPageIdx(@RequestParam(defaultValue = "40") int row){
+        return service.boardPageIdx(row);
     }
 
 }

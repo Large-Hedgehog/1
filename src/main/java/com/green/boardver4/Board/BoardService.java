@@ -1,6 +1,7 @@
 package com.green.boardver4.Board;
 
 import com.green.boardver4.Board.model.BoardInsDto;
+import com.green.boardver4.Board.model.BoardPageIdxDto;
 import com.green.boardver4.Board.model.BoardSelDto;
 import com.green.boardver4.Board.model.BoardVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class BoardService {
         int startIdx = (dto.getPage()-1)*dto.getRow();
         dto.setStartIdx(startIdx);
         return mapper.selBoard(dto);
+    }
+
+    public int boardPageIdx(int row){
+        return mapper.boardPageIdx(row);
     }
 
 }

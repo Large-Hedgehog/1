@@ -1,7 +1,8 @@
 package com.green.boardver4.Board.model;
 
+import lombok.Data;
+
+@Data
 public class BoardPageIdxDto {
-    private int startIdx;
-    private int row;
-    private int iboard;
+    private int MaxPage;
 }
