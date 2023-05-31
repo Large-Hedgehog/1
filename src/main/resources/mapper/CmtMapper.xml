@@ -4,7 +4,7 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.green.boardver4.cmt.CmtMapper">
 
-    <insert id="insertBoardCmt">
+    <insert id="insertBoardCmt" useGeneratedKeys="true" keyProperty="iboardCmt">
         INSERT INTO t_board_cmt
         SET iboard = #{iboard}
         , iuser = #{iuser}

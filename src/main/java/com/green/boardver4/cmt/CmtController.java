@@ -1,5 +1,6 @@
 package com.green.boardver4.cmt;
 
+import com.green.boardver4.cmt.model.CmtEntity;
 import com.green.boardver4.cmt.model.CmtInsDto;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
