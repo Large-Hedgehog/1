@@ -17,9 +17,17 @@ public class BoardService {
     }
 
     public int InsBoard(BoardInsDto dto){
-        return mapper.InsBoard(dto);
+        BoardEntity entity = new BoardEntity();
+        entity.setTitle(dto.getTitle());
+        entity.setCtnt(dto.getCtnt());
+        entity.setIuser(dto.getIuser());
+        entity.setIuser(dto.getIuser());
+        int result = mapper.InsBoard(entity);
+        if (result == 1){
+            return entity.getIboard();
+        }
+        return result;
     }
-
     public List<BoardVo>selBoard(BoardSelDto dto){
         int startIdx = (dto.getPage()-1)*dto.getRow();
         dto.setStartIdx(startIdx);
