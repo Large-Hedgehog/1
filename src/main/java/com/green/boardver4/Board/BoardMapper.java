@@ -11,5 +11,5 @@ import java.util.List;
 @Mapper
 public interface BoardMapper {
     int InsBoard(BoardInsDto dto);
-    List<BoardSelDto>selBoard(BoardSelDto dto);
+    List<BoardVo>selBoard(BoardSelDto dto);
 }

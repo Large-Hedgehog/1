@@ -4,6 +4,7 @@ package com.green.boardver4.Board;
 import com.green.boardver4.Board.model.BoardDto;
 import com.green.boardver4.Board.model.BoardInsDto;
 import com.green.boardver4.Board.model.BoardSelDto;
+import com.green.boardver4.Board.model.BoardVo;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +29,7 @@ public class BoardController {
     }
 
     @GetMapping("/")
-    public List<BoardSelDto> getBoard(@RequestParam(defaultValue = "1") int page
+    public List<BoardVo> getBoard(@RequestParam(defaultValue = "1") int page
     , @RequestParam(defaultValue = "30") int row){
         BoardSelDto dto = new BoardSelDto();
         dto.setPage(page);
