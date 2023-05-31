@@ -29,8 +29,8 @@ public class BoardService {
         return mapper.selBoard(dto);
     }
 
-    public int boardPageIdx(int row){
-        return mapper.boardPageIdx(row);
+    public int selBoardMaxPage(int row){
+        return mapper.selBoardMaxPage(row);
     }
 
 }

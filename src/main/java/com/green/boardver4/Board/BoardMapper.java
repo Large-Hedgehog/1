@@ -9,5 +9,5 @@ import java.util.List;
 public interface BoardMapper {
     int InsBoard(BoardInsDto dto);
     List<BoardVo>selBoard(BoardSelDto dto);
-    int boardPageIdx(int row);
+    int selBoardMaxPage(int row);
 }

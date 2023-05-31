@@ -8,8 +8,8 @@
         (title,ctnt,iuser)
         values
         (#{title},#{ctnt},#{iuser})
-
     </insert>
+
     <select id="selBoard" resultType="BoardSelDto">
         select A.iboard, A.title, A.created_at createdAt
         , B.nm writer
@@ -20,8 +20,8 @@
         LIMIT ${startIdx}, ${row}
     </select>
     
-    <select id="selBoardPage" resultType="BoardPageIdxDto">
-        select COUNT(iboard) MaxPage
+    <select id="selBoardMaxPage" resultType="int">
+        select CEIL( COUNT(iboard) / ${row})
         from t_board
     </select>
 </mapper>
