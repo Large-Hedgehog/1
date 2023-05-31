@@ -1,13 +1,13 @@
 package com.green.boardver4.Board.model;
 
-import lombok.Data;
 
+import lombok.Builder;
+import lombok.Data;
+@Builder
 @Data
 public class BoardSelDto {
-    private int iboard;
-    private String title;
-    private String ctnt;
-    private int iuser;
-    private String createAt;
+    private int startIdx;
+    private int row;
+    private int page;
 
 }

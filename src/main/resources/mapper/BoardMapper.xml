@@ -11,8 +11,12 @@
 
     </insert>
     <select id="selBoard" resultType="BoardSelDto">
-        select iboard,title,ctnt,iuser,created_at createdAt
-        from t_board
-        Limit #{startIdx},#{row}
+        select A.iboard, A.title, A.created_at createdAt
+        , B.nm writer
+        FROM t_board A
+        INNER JOIN t_user B
+        ON A.iboard = B.iboard
+        ORDERY BY iboard DESC
+        LIMIT ${startIdx}, ${row}
     </select>
 </mapper>
