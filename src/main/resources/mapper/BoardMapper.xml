@@ -19,4 +19,10 @@
         ORDERY BY iboard DESC
         LIMIT ${startIdx}, ${row}
     </select>
+    
+    <select id="selBoardPage" resultType="BoardPageIdxDto">
+        select iboard
+        from t_board
+        LIMIT ${startIdx}, ${row}
+    </select>
 </mapper>
