@@ -11,4 +11,5 @@ public interface BoardMapper {
     List<BoardVo>selBoard(BoardSelDto dto);
     int selBoardMaxPage(int row);
     BoardDetail selBoardDetail(BoardDetail dto);
+    int deleteBoard(BoardDetail dto);
 }

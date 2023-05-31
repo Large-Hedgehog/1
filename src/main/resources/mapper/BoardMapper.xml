@@ -31,4 +31,10 @@
         WHERE iboard = ${iboard}
     </select>
 
+    <delete id="deleteBoard">
+        DELETE *
+        FROM t_board
+        WHERE iboard = ${iboard}
+    </delete>
+
 </mapper>
