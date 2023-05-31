@@ -8,7 +8,6 @@ public class BoardDetail {
     private String title;
     private String ctnt;
     private int iuser;
-    private String createdAt;
-    private String writer;
-    private String writerMainPic;
+    private String createAt;
+    private String updateAt;
 }

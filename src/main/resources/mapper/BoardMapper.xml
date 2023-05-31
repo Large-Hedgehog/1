@@ -25,12 +25,10 @@
         from t_board
     </select>
 
-    <select id="detailBoard" resultType="BoardDetail">
-        SELECT A.iboard, A.title, A.ctnt, A.iuser, A.created_at createdAt ,
-        B.nm writer, B.main_pic writerMainPic
-        FROM t_board A
-        INNER JOIN t_user B
-        ON A.iuser = B.iuser
+    <select id="selBoardDetail" resultType="BoardDetail">
+        SELECT iboard,title,ctnt,iuser,created_at createAt,updated_at updateAt
+        FROM t_board
+        WHERE iboard = ${iboard}
     </select>
 
 </mapper>

@@ -1,9 +1,6 @@
 package com.green.boardver4.Board;
 
-import com.green.boardver4.Board.model.BoardInsDto;
-import com.green.boardver4.Board.model.BoardPageIdxDto;
-import com.green.boardver4.Board.model.BoardSelDto;
-import com.green.boardver4.Board.model.BoardVo;
+import com.green.boardver4.Board.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,4 +30,7 @@ public class BoardService {
         return mapper.selBoardMaxPage(row);
     }
 
+    public BoardDetail getBoardDetail(BoardDetail detail){
+        return mapper.selBoardDetail(detail);
+    }
 }

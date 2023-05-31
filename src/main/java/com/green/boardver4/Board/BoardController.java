@@ -39,4 +39,10 @@ public class BoardController {
         return service.selBoardMaxPage(row);
     }
 
+    @GetMapping("/{iboard}")
+    public BoardDetail getBoardDetail(@PathVariable int iboard){
+        BoardDetail dto = new BoardDetail();
+        dto.setIboard(iboard);
+        return service.getBoardDetail(dto);
+    }
 }
