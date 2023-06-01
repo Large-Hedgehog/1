@@ -31,7 +31,7 @@ public class CmtController {
 
     @GetMapping("/{iboard}/cmt")
     @Operation(summary = "자세히보기")
-    public List<CmtVo> GetBoardCmt(@PathVariable int iboard,
+    public CmtRes GetBoardCmt(@PathVariable int iboard,
                                    @RequestParam int page,
                                    @RequestParam(defaultValue = "5") int row){
         CmtSelDto dto = new CmtSelDto();
@@ -61,6 +61,5 @@ public class CmtController {
         entity.setCtnt(dto.getCtnt());
         entity.setIuser(dto.getIuser());
         return service.updateBoardCmt(entity);
-
     }
 }

@@ -26,10 +26,28 @@ public class CmtService {
         }
         return 0;
     }
-    public List<CmtVo> selectBoardCmt(CmtSelDto dto){
+    public CmtRes selectBoardCmt(CmtSelDto dto){
         int startIdx = (dto.getPage() - 1) * dto.getRow();
+        int lastIdx = startIdx + dto.getRow();
+        int cmtIdx = dto.getCmtIdx();
         dto.setStartIdx(startIdx);
-        return mapper.selectBoardCmt(dto);
+        List<CmtVo> list = mapper.selectBoardCmt(dto);
+
+
+        //    private int isMore; // 0이면 댓글 더 없음, 1이면 댓글 더 있음
+
+
+        if((lastIdx - cmtIdx) < 0){
+            return CmtRes.builder()
+                    .list(list)
+                    .isMore(0)
+                    .build();
+        }
+
+        return CmtRes.builder()
+                .list(list)
+                .isMore(1)
+                .build();
     }
 
     public int deleteBoardCmt (CmtDelDto dto){

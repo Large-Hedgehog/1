@@ -14,9 +14,19 @@
     <select id="selectBoardCmt" resultType="CmtVo">
         SELECT A.iboard_cmt iboardCmt,A.iboard,A.iuser,B.nm writer,B.main_pic writerMainPic,A.ctnt,A.created_at createdAt
         FROM t_board_cmt A
-        JOIN t_user B
+        INNER JOIN t_user B
         ON A.iuser = B.iuser
-        LIMIT ${page}, ${row}
+        WHERE A.iboard = #{iboard}
+        LIMIT #{startIdx}, #{row}
+    </select>
+
+    <select id="MoreCmt" resultType="MoreCmtVo">
+        SELECT A.iboard_cmt iboardCmt,A.iboard,A.iuser,B.nm writer,B.main_pic writerMainPic,A.ctnt,A.created_at createdAt
+        FROM t_board_cmt A
+        INNER JOIN t_user B
+        ON A.iuser = B.iuser
+        WHERE A.iboard = #{iboard}
+        LIMIT #{startIdx}, #{row}
     </select>
 
     <update id="updateBoardCmt">
