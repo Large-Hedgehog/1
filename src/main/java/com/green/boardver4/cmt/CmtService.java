@@ -36,14 +36,6 @@ public class CmtService {
 
         //    private int isMore; // 0이면 댓글 더 없음, 1이면 댓글 더 있음
 
-
-        if((lastIdx - cmtIdx) < 0){
-            return CmtRes.builder()
-                    .list(list)
-                    .isMore(0)
-                    .build();
-        }
-
         return CmtRes.builder()
                 .list(list)
                 .isMore(1)
