@@ -35,4 +35,8 @@ public class CmtService {
     public int deleteBoardCmt (CmtDelDto dto){
       return mapper.deleteBoardCmt(dto);
     }
+
+    public int updateBoardCmt(CmtUpdateDto dto){
+        return mapper.updateBoardCmt(dto);
+    }
 }

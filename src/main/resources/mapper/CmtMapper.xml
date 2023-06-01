@@ -23,6 +23,7 @@
         UPDATE t_board_cmt
         SET iuser = #{iuser}
         , ctnt = #{ctnt}
+        , updated_at = current_timestamp()
         WHERE iboard_cmt = #{iboard_cmt}
     </update>
 
