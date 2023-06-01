@@ -1,9 +1,6 @@
 package com.green.boardver4.cmt;
 
-import com.green.boardver4.cmt.model.CmtDto;
-import com.green.boardver4.cmt.model.CmtEntity;
-import com.green.boardver4.cmt.model.CmtInsDto;
-import com.green.boardver4.cmt.model.CmtSelDto;
+import com.green.boardver4.cmt.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -29,7 +26,7 @@ public class CmtService {
         }
         return 0;
     }
-    public List<CmtSelDto> selectBoardCmt(CmtDto dto){
+    public List<CmtVo> selectBoardCmt(CmtSelDto dto){
         int startIdx = (dto.getPage() - 1) * dto.getRow();
         dto.setStartIdx(startIdx);
         return mapper.selectBoardCmt(dto);

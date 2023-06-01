@@ -1,9 +1,6 @@
 package com.green.boardver4.cmt;
 
-import com.green.boardver4.cmt.model.CmtDto;
-import com.green.boardver4.cmt.model.CmtEntity;
-import com.green.boardver4.cmt.model.CmtInsDto;
-import com.green.boardver4.cmt.model.CmtSelDto;
+import com.green.boardver4.cmt.model.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,8 +17,8 @@ public class CmtController {
     public CmtController(CmtService service) {
         this.service = service;
     }
-    @PostMapping("/{iboard}")
-    public int PostCmt(@PathVariable int iboard,
+    @PostMapping("/{iboard}/cmt")
+    public int PostBoardCmt(@PathVariable int iboard,
             @RequestBody CmtInsDto dto){
         CmtEntity entity = new CmtEntity();
         entity.setIboard(iboard);
@@ -31,12 +28,13 @@ public class CmtController {
     }
 
     @GetMapping("/{iboard}/cmt")
-    public List<CmtSelDto> GetCmt(@PathVariable int iboard, @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "30") int row){
-        CmtDto dto = new CmtDto();
+    public List<CmtVo> GetBoardCmt(@PathVariable int iboard,
+                                   @RequestParam int page,
+                                   @RequestParam(defaultValue = "5") int row){
+        CmtSelDto dto = new CmtSelDto();
         dto.setIboard(iboard);
         dto.setPage(page);
         dto.setRow(row);
         return service.selectBoardCmt(dto);
     }
-
 }

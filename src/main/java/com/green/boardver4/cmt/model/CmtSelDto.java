@@ -4,11 +4,8 @@ import lombok.Data;
 
 @Data
 public class CmtSelDto {
-    private int iboardCmt;
     private int iboard;
-    private int iuser;
-    private String writer;
-    private String writerMainPic;
-    private String ctnt;
-    private String createdAt;
+    private int startIdx;
+    private int page;
+    private int row;
 }
