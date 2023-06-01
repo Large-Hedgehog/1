@@ -18,11 +18,7 @@ public class CmtService {
         this.mapper = mapper;
     }
 
-    public int insertBoardCmt(CmtInsDto dto){
-        CmtEntity entity = new CmtEntity();
-        entity.setIboard(dto.getIboard());
-        entity.setIuser(dto.getIuser());
-        entity.setCtnt(dto.getCtnt());
+    public int insertBoardCmt(CmtEntity entity){
         try{
             int result = mapper.insertBoardCmt(entity);
             if (result == 1){

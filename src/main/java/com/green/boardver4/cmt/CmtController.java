@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/board/cmt")
+@RequestMapping("/board")
 @Tag(name="댓글", description = "")
 public class CmtController {
     private final CmtService service;
@@ -20,11 +20,16 @@ public class CmtController {
     public CmtController(CmtService service) {
         this.service = service;
     }
-    @PostMapping
-    public int PostCmt(@RequestBody CmtInsDto dto){
-        return service.insertBoardCmt(dto);
+    @PostMapping("/{iboard}")
+    public int PostCmt(@PathVariable int iboard,
+            @RequestBody CmtInsDto dto){
+        CmtEntity entity = new CmtEntity();
+        entity.setIboard(iboard);
+        entity.setIuser(dto.getIuser());
+        entity.setCtnt(dto.getCtnt());
+        return service.insertBoardCmt(entity);
     }
-    @GetMapping("/{iboard}")
+    @GetMapping("/{iboard}/cmt")
     public List<CmtSelDto> GetCmt(@PathVariable int iboard, @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "30") int row){
         CmtDto dto = new CmtDto();
         dto.setIboard(iboard);
