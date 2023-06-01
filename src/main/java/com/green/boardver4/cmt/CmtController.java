@@ -1,6 +1,7 @@
 package com.green.boardver4.cmt;
 
 import com.green.boardver4.cmt.model.*;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,6 +19,7 @@ public class CmtController {
         this.service = service;
     }
     @PostMapping("/{iboard}/cmt")
+    @Operation(summary = "댓글쓰기")
     public int PostBoardCmt(@PathVariable int iboard,
             @RequestBody CmtInsDto dto){
         CmtEntity entity = new CmtEntity();
@@ -28,6 +30,7 @@ public class CmtController {
     }
 
     @GetMapping("/{iboard}/cmt")
+    @Operation(summary = "자세히보기")
     public List<CmtVo> GetBoardCmt(@PathVariable int iboard,
                                    @RequestParam int page,
                                    @RequestParam(defaultValue = "5") int row){
@@ -39,6 +42,7 @@ public class CmtController {
     }
 
     @DeleteMapping("/cmt/{iboardCmt}")
+    @Operation(summary = "삭제")
     public int DelBoardCmt(@PathVariable int iboardCmt,
                            @RequestParam int iuser
                            ){
@@ -49,6 +53,7 @@ public class CmtController {
     }
 
     @PutMapping("/cmt/{iboardCmt}")
+    @Operation(summary = "댓글수정")
     public int PutBoardCmt(@PathVariable int iboardCmt,
                            @RequestParam int iuser,
                            @RequestParam String ctnt){

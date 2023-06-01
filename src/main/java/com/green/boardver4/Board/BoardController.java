@@ -2,6 +2,7 @@ package com.green.boardver4.Board;
 
 
 import com.green.boardver4.Board.model.*;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -40,12 +41,14 @@ public class BoardController {
     }
 
     @GetMapping("/{iboard}")
+    @Operation(summary = "자세히보기")
     public BoardDetail getBoardDetail(@PathVariable int iboard){
         BoardDetail dto = new BoardDetail();
         dto.setIboard(iboard);
         return service.getBoardDetail(dto);
     }
     @DeleteMapping
+    @Operation(summary = "삭제")
     public int deleteBoard (@RequestParam int iboard, @RequestParam int iuser){
         BoardDetail dto = new BoardDetail();
         dto.setIboard(iboard);
@@ -54,6 +57,7 @@ public class BoardController {
     }
 
     @PutMapping
+    @Operation(summary = "수정")
     public int updateBoard(@RequestBody BoardUpdateDto dto){
         return service.updateBoard(dto);
     }
