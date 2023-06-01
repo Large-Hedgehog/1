@@ -16,6 +16,7 @@
         FROM t_board_cmt A
         JOIN t_user B
         ON A.iuser = B.iuser
+        LIMIT ${page}, ${row}
     </select>
 
 </mapper>

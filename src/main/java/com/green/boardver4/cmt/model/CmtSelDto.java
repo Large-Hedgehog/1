@@ -3,7 +3,7 @@ package com.green.boardver4.cmt.model;
 import lombok.Data;
 
 @Data
-public class CmtDto {
+public class CmtSelDto {
     private int iboardCmt;
     private int iboard;
     private int iuser;
