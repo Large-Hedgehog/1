@@ -29,6 +29,7 @@ public class CmtController {
         entity.setCtnt(dto.getCtnt());
         return service.insertBoardCmt(entity);
     }
+
     @GetMapping("/{iboard}/cmt")
     public List<CmtSelDto> GetCmt(@PathVariable int iboard, @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "30") int row){
         CmtDto dto = new CmtDto();
