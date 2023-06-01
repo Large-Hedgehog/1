@@ -11,4 +11,11 @@
         , ctnt = #{ctnt}
     </insert>
 
+    <select id="selectBoardCmt" resultType="CmtDto">
+        SELECT A.iboard_cmt iboardCmt,A.iboard,A.iuser,B.nm writer,B.main_pic writerMainPic,A.ctnt,A.created_at createdAt
+        FROM t_board_cmt A
+        JOIN t_user B
+        ON A.iuser = B.iuser
+    </select>
+
 </mapper>
