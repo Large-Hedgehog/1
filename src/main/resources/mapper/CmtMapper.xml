@@ -19,6 +19,13 @@
         LIMIT ${page}, ${row}
     </select>
 
+    <update id="updateBoardCmt">
+        UPDATE t_board_cmt
+        SET iuser = #{iuser}
+        , ctnt = #{ctnt}
+        WHERE iboard_cmt = #{iboard_cmt}
+    </update>
+
     <delete id="deleteBoardCmt">
         DELETE FROM t_board_cmt
         WHERE iboard_cmt = #{iboard_cmt}
