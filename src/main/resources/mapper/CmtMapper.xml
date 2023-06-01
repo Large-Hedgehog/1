@@ -22,5 +22,6 @@
     <delete id="deleteBoardCmt">
         DELETE FROM t_board_cmt
         WHERE iboard_cmt = #{iboard_cmt}
+        and iuser = #{iuser}
     </delete>
 </mapper>

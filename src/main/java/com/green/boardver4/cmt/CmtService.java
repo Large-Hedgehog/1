@@ -31,4 +31,8 @@ public class CmtService {
         dto.setStartIdx(startIdx);
         return mapper.selectBoardCmt(dto);
     }
+
+    public int deleteBoardCmt (CmtDelDto dto){
+      return mapper.deleteBoardCmt(dto);
+    }
 }

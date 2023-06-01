@@ -37,4 +37,14 @@ public class CmtController {
         dto.setRow(row);
         return service.selectBoardCmt(dto);
     }
+
+    @DeleteMapping("/cmt/{iboardCmt}")
+    public int DelBoardCmt(@PathVariable int iboardCmt,
+                           @RequestParam int iuser
+                           ){
+        CmtDelDto dto= new CmtDelDto();
+        dto.setIboard_cmt(iboardCmt);
+        dto.setIuser(iuser);
+        return service.deleteBoardCmt(dto);
+    }
 }
