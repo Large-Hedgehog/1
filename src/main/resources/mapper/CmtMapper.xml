@@ -25,6 +25,7 @@
         , ctnt = #{ctnt}
         , updated_at = current_timestamp()
         WHERE iboard_cmt = #{iboard_cmt}
+        and iuser = #{iuser}
     </update>
 
     <delete id="deleteBoardCmt">

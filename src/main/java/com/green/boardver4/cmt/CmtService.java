@@ -19,7 +19,7 @@ public class CmtService {
         try{
             int result = mapper.insertBoardCmt(entity);
             if (result == 1){
-                return entity.getIboardCmt();
+                return entity.getIboard_cmt();
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -36,7 +36,7 @@ public class CmtService {
       return mapper.deleteBoardCmt(dto);
     }
 
-    public int updateBoardCmt(CmtUpdateDto dto){
-        return mapper.updateBoardCmt(dto);
+    public int updateBoardCmt(CmtEntity entity){
+        return mapper.updateBoardCmt(entity);
     }
 }

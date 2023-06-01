@@ -10,5 +10,5 @@ public interface CmtMapper {
     int insertBoardCmt(CmtEntity entity);
     List<CmtVo>selectBoardCmt(CmtSelDto dto);
     int deleteBoardCmt(CmtDelDto dto);
-    int updateBoardCmt(CmtUpdateDto dto);
+    int updateBoardCmt(CmtEntity entity);
 }

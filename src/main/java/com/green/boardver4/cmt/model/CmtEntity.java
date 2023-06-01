@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class CmtEntity {
-    private int iboardCmt;
+    private int iboard_cmt;
     private int iboard;
     private int iuser;
     private String ctnt;

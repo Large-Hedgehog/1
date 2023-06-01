@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class CmtUpdateDto {
-    private int iboard_cmt;
+    //private int iboard_cmt;
     private int iuser;
     private String ctnt;
 }

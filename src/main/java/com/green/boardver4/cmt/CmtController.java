@@ -55,13 +55,12 @@ public class CmtController {
     @PutMapping("/cmt/{iboardCmt}")
     @Operation(summary = "댓글수정")
     public int PutBoardCmt(@PathVariable int iboardCmt,
-                           @RequestParam int iuser,
-                           @RequestParam String ctnt){
-        CmtUpdateDto dto = new CmtUpdateDto();
-        dto.setIboard_cmt(iboardCmt);
-        dto.setIuser(iuser);
-        dto.setCtnt(ctnt);
-        return service.updateBoardCmt(dto);
+                           @RequestBody CmtUpdateDto dto){
+        CmtEntity entity = new CmtEntity();
+        entity.setIboard_cmt(iboardCmt);
+        entity.setCtnt(dto.getCtnt());
+        entity.setIuser(dto.getIuser());
+        return service.updateBoardCmt(entity);
 
     }
 }
