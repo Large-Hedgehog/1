@@ -54,7 +54,7 @@ public class BoardService {
         cmtdto.setRow(1);
         cmtdto.setStartIdx(1);
 
-        cmtservice.selBoardCmt(cmtdto);
+          cmtservice.selBoardCmt(cmtdto);
         return mapper.selBoardDetail(detail);
     }
     public int updateBoard (BoardUpdateDto dto){
