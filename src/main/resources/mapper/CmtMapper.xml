@@ -37,7 +37,7 @@
     <delete id="deleteBoardCmt">
         DELETE FROM t_board_cmt
         WHERE
-        <if test="iboardCmt > 0 and iuser > 0">
+        <if test="iboard_cmt > 0 and iuser > 0">
             iboard_cmt = #{iboard_cmt}
             AND iuser = #{iuser}
         </if>

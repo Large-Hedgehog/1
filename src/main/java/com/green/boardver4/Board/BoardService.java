@@ -2,8 +2,11 @@ package com.green.boardver4.Board;
 
 import com.green.boardver4.Board.model.*;
 import com.green.boardver4.cmt.CmtMapper;
+import com.green.boardver4.cmt.CmtService;
+import com.green.boardver4.cmt.model.CmtDelDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -11,12 +14,12 @@ import java.util.List;
 public class BoardService {
 
     private final BoardMapper mapper;
-    private final CmtMapper cmtMapper;
+    private final CmtService cmtservice;
 
     @Autowired
-    public BoardService(BoardMapper mapper,CmtMapper cmtMapper) {
+    public BoardService(BoardMapper mapper,CmtService cmtservice) {
         this.mapper = mapper;
-        this.cmtMapper = cmtMapper;
+        this.cmtservice = cmtservice;
     }
 
     public int InsBoard(BoardInsDto dto){
@@ -47,10 +50,17 @@ public class BoardService {
     public int updateBoard (BoardUpdateDto dto){
         return mapper.updateBoard(dto);
     }
-
-    public int deleteBoard(BoardDetail dto){
-//        int result = cmtMapper.deleteBoardCmt();
-        // 그 글에 달려있는 댓글을 전부 삭제해야 함. 실제로는 데이터베이스 삭제하는거 겁내 함
-        return mapper.deleteBoard(dto);
+    @Transactional(rollbackFor = Exception.class)
+    public int deleteBoard(BoardDetail dto) throws Exception {
+         CmtDelDto cmtDto = new CmtDelDto();
+        cmtDto.setIboard(dto.getIboard());
+        cmtservice.deleteBoardCmt(cmtDto);
+        // 그 글에 달려있는 댓글을 전부 삭제해야 함.
+        int result = 0;
+        result = mapper.deleteBoard(dto);
+        if (result == 0) {
+            throw new Exception("삭제 권한 없음");
+        }
+        return result;
     }
 }

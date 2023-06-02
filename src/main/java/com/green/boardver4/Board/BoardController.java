@@ -49,7 +49,7 @@ public class BoardController {
     }
     @DeleteMapping
     @Operation(summary = "삭제")
-    public int deleteBoard (@RequestParam int iboard, @RequestParam int iuser){
+    public int deleteBoard (@RequestParam int iboard, @RequestParam int iuser) throws Exception {
         BoardDetail dto = new BoardDetail();
         dto.setIboard(iboard);
         dto.setIuser(iuser);
