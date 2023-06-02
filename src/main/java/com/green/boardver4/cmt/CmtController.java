@@ -38,7 +38,7 @@ public class CmtController {
         dto.setIboard(iboard);
         dto.setPage(page);
         dto.setRow(row);
-        return service.selectBoardCmt(dto);
+        return service.selBoardCmt(dto);
     }
 
     @DeleteMapping("/cmt/{iboardCmt}")

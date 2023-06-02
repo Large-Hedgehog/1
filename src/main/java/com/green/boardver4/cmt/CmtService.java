@@ -26,19 +26,20 @@ public class CmtService {
         }
         return 0;
     }
-    public CmtRes selectBoardCmt(CmtSelDto dto){
+    public CmtRes selBoardCmt(CmtSelDto dto) {
         int startIdx = (dto.getPage() - 1) * dto.getRow();
-        int lastIdx = startIdx + dto.getRow();
-        int cmtIdx = dto.getCmtIdx();
         dto.setStartIdx(startIdx);
-        List<CmtVo> list = mapper.selectBoardCmt(dto);
+        List<CmtVo> list = mapper.selBoardCmt(dto);
 
-
-        //    private int isMore; // 0이면 댓글 더 없음, 1이면 댓글 더 있음
+        int rowCnt = mapper.selBoardCmtRowCountByIBoard(dto.getIboard());
+        int maxPage = (int)Math.ceil((double)rowCnt / dto.getRow());
+        int isMore = maxPage > dto.getPage() ? 1 : 0;
 
         return CmtRes.builder()
                 .list(list)
-                .isMore(1)
+                .isMore(isMore)
+                .maxPage(maxPage)
+                .row(dto.getRow())
                 .build();
     }
 
