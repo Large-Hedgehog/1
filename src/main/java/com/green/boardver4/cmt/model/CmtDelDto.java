@@ -6,4 +6,5 @@ import lombok.Data;
 public class CmtDelDto {
     private int iboard_cmt;
     private int iuser;
+    private int iboard;
 }

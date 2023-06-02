@@ -1,6 +1,7 @@
 package com.green.boardver4.Board;
 
 import com.green.boardver4.Board.model.*;
+import com.green.boardver4.cmt.CmtMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +11,12 @@ import java.util.List;
 public class BoardService {
 
     private final BoardMapper mapper;
+    private final CmtMapper cmtMapper;
 
     @Autowired
-    public BoardService(BoardMapper mapper) {
+    public BoardService(BoardMapper mapper,CmtMapper cmtMapper) {
         this.mapper = mapper;
+        this.cmtMapper = cmtMapper;
     }
 
     public int InsBoard(BoardInsDto dto){
@@ -46,6 +49,8 @@ public class BoardService {
     }
 
     public int deleteBoard(BoardDetail dto){
+//        int result = cmtMapper.deleteBoardCmt();
+        // 그 글에 달려있는 댓글을 전부 삭제해야 함. 실제로는 데이터베이스 삭제하는거 겁내 함
         return mapper.deleteBoard(dto);
     }
 }
