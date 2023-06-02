@@ -1,6 +1,7 @@
 package com.green.boardver4.user;
 import com.green.boardver4.user.model.UserInsDto;
 import com.green.boardver4.user.model.UserLoginDto;
+import com.green.boardver4.user.model.UserPatchPicDto;
 import com.green.boardver4.user.model.UserPwDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,8 @@ public class UserController {
 
     @PatchMapping(name="/pic", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE } )
     public int patchPicUser(@RequestPart MultipartFile pic, @RequestParam int iuser){
-        return 0;
+        UserPatchPicDto dto = new UserPatchPicDto();
+        dto.setIuser(iuser);
+        return service.updUserPic();
     }
 }
