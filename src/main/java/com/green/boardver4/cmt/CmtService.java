@@ -34,7 +34,6 @@ public class CmtService {
         int rowCnt = mapper.selBoardCmtRowCountByIBoard(dto.getIboard());
         int maxPage = (int)Math.ceil((double)rowCnt / dto.getRow());
         int isMore = maxPage > dto.getPage() ? 1 : 0;
-
         return CmtRes.builder()
                 .list(list)
                 .isMore(isMore)
