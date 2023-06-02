@@ -13,4 +13,5 @@ public interface BoardMapper {
     BoardDetail selBoardDetail(BoardDetail dto);
     int deleteBoard(BoardDetail dto);
     int updateBoard(BoardUpdateDto dto);
+    BoardDetailAll BoardDetailAll();
 }
