@@ -42,10 +42,10 @@ public class BoardController {
 
     @GetMapping("/{iboard}")
     @Operation(summary = "자세히보기")
-    public BoardDetail getBoardDetail(@PathVariable int iboard){
-        BoardDetail dto = new BoardDetail();
+    public BoardDetailAll getBoardDetail(@PathVariable int iboard){
+        BoardSelDto dto = new BoardSelDto();
         dto.setIboard(iboard);
-        return service.getBoardDetail(dto);
+        return service.BoardDetail(dto);
     }
     @DeleteMapping
     @Operation(summary = "삭제")

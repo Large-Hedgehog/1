@@ -47,15 +47,15 @@ public class BoardService {
         return mapper.selBoardMaxPage(row);
     }
 
-    public BoardDetail getBoardDetail(BoardDetail detail){
+    public BoardDetailAll BoardDetail(BoardSelDto dto){
         CmtSelDto cmtdto = new CmtSelDto();
-        cmtdto.setIboard(detail.getIboard());
+        cmtdto.setIboard(dto.getIboard());
         cmtdto.setPage(1);
-        cmtdto.setRow(1);
-        cmtdto.setStartIdx(1);
+        cmtdto.setRow(5);
+        CmtRes cmtRes = cmtservice.selBoardCmt(cmtdto);
+        BoardDetail boardDetail = mapper.selBoardDetail(dto);
 
-          cmtservice.selBoardCmt(cmtdto);
-        return mapper.selBoardDetail(detail);
+        return BoardDetailAll.builder().iboard(boardDetail).cmtResList(cmtRes).build();
     }
     public int updateBoard (BoardUpdateDto dto){
         return mapper.updateBoard(dto);

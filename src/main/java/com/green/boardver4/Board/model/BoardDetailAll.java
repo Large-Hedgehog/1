@@ -1,17 +1,15 @@
 package com.green.boardver4.Board.model;
 
 import com.green.boardver4.cmt.model.CmtRes;
+import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 import java.util.List;
 
-@Data
+@Getter
+@Builder
 public class BoardDetailAll {
-    private int iboard;
-    private String title;
-    private String ctnt;
-    private int iuser;
-    private String createAt;
-    private String updateAt;
-    private List<CmtRes> cmtResList;
+    private BoardDetail iboard;
+    private CmtRes cmtResList;
 }
