@@ -61,4 +61,5 @@ public class BoardController {
     public int updateBoard(@RequestBody BoardUpdateDto dto){
         return service.updateBoard(dto);
     }
+
 }

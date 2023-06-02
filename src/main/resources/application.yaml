@@ -24,4 +24,4 @@ springdoc:
     path: /swagger.html
 
 file:
-  dir: D:/download/
+  dir: D:/download/board3

@@ -4,7 +4,9 @@ import com.green.boardver4.user.model.UserLoginDto;
 import com.green.boardver4.user.model.UserPwDto;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 @RestController
 @RequestMapping("/user")
@@ -45,5 +47,11 @@ public class UserController {
     @PatchMapping("/pw")
     public int patchPwUser(@RequestBody UserPwDto dto){
         return service.PwUser(dto);
+    }
+
+
+    @PatchMapping(name="/pic", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE } )
+    public int patchPicUser(@RequestPart MultipartFile pic, @RequestParam int iuser){
+        return 0;
     }
 }

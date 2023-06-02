@@ -40,7 +40,7 @@
         <if test="iboard_cmt > 0 and iuser > 0">
             iboard_cmt = #{iboard_cmt}
             AND iuser = #{iuser}
-        </if>
+        </if>D
         <if test="iboard > 0">
             iboard = #{iboard}
         </if>
