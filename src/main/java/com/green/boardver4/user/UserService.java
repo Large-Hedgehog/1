@@ -1,18 +1,22 @@
 package com.green.boardver4.user;
-import com.green.boardver4.user.model.UserInsDto;
-import com.green.boardver4.user.model.UserLoginDto;
-import com.green.boardver4.user.model.UserLoginVo;
-import com.green.boardver4.user.model.UserPwDto;
+import com.green.boardver4.user.model.*;
 import com.green.boardver4.utils.CommonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.File;
 
 
 @Service
 public class UserService {
     private final UserMapper mapper;
     private final CommonUtils commonUtils;
+
+    @Value("${file.dir}")
+    private String fileDir;
 
     @Autowired
     public UserService(UserMapper mapper, CommonUtils commonUtils) {
@@ -44,7 +48,20 @@ public class UserService {
         return mapper.PwUser(dto);
     }
 
-    public int updUserPic(){
+    public int updUserPic(MultipartFile pic, UserPatchPicDto dto){
+        // user/pk/uuid.jpg
+        // 전체경로를 db의 mainpic에 저장
+
+        String dicPath = String.format("%s/user/%d", fileDir, dto.getIuser());
+        // D:/download/board3/user/1
+
+        File dic = new File(dicPath);
+        if(!dic.exists()){
+            //해당하는 폴더가 없으면 실행
+           // dic.mkdir();
+            dic.mkdirs();
+        }
+
         return 0;
     }
 }

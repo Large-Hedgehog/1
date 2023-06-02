@@ -55,6 +55,6 @@ public class UserController {
     public int patchPicUser(@RequestPart MultipartFile pic, @RequestParam int iuser){
         UserPatchPicDto dto = new UserPatchPicDto();
         dto.setIuser(iuser);
-        return service.updUserPic();
+        return service.updUserPic(pic, dto);
     }
 }
