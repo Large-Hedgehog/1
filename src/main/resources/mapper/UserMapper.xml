@@ -20,11 +20,11 @@
         set upw = #{upw}
         where iuser = #{iuser}
     </update>
-    
+
     <update id="updUserPic">
         UPDATE t_user
-        set main_pic = #{mainPic}
-        where = iuser = ${iuser}
+        SET main_pic = #{mainPic}
+        WHERE iuser = #{iuser}
     </update>
 
 </mapper>
