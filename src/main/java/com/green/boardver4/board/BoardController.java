@@ -1,7 +1,7 @@
-package com.green.boardver4.Board;
+package com.green.boardver4.board;
 
 
-import com.green.boardver4.Board.model.*;
+import com.green.boardver4.board.model.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,13 +26,14 @@ public class BoardController {
         return service.InsBoard(dto);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<BoardVo> getBoard(@RequestParam(defaultValue = "1") int page
     , @RequestParam(defaultValue = "30") int row){
         BoardSelDto dto = new BoardSelDto();
         dto.setPage(page);
         dto.setRow(row);
-        return service.selBoard(dto);
+        List<BoardVo> list = service.selBoard(dto);
+        return list;
     }
 
     @GetMapping("/maxpage")

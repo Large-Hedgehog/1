@@ -1,7 +1,5 @@
 package com.green.boardver4.utils;
 
-import com.green.boardver4.Board.model.BoardPageIdxDto;
-
 import java.util.UUID;
 
 public class FileUtils {

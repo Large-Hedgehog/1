@@ -1,12 +1,10 @@
-package com.green.boardver4.Board;
+package com.green.boardver4.board;
 
-import com.green.boardver4.Board.model.*;
-import com.green.boardver4.cmt.CmtMapper;
+import com.green.boardver4.board.model.*;
 import com.green.boardver4.cmt.CmtService;
 import com.green.boardver4.cmt.model.CmtDelDto;
 import com.green.boardver4.cmt.model.CmtRes;
 import com.green.boardver4.cmt.model.CmtSelDto;
-import com.green.boardver4.cmt.model.CmtVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,7 +29,7 @@ public class BoardService {
         entity.setCtnt(dto.getCtnt());
         entity.setIuser(dto.getIuser());
         entity.setIuser(dto.getIuser());
-        int result = mapper.InsBoard(entity);
+        int result = mapper.insBoard(entity);
         if (result == 1){
             return entity.getIboard();
         }

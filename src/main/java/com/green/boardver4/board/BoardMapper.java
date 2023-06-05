@@ -1,13 +1,13 @@
-package com.green.boardver4.Board;
+package com.green.boardver4.board;
 
-import com.green.boardver4.Board.model.*;
+import com.green.boardver4.board.model.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
 @Mapper
 public interface BoardMapper {
-    int InsBoard(BoardEntity dto);
+    int insBoard(BoardEntity dto);
     List<BoardVo>selBoard(BoardSelDto dto);
     int selBoardMaxPage(int row);
     BoardDetail selBoardDetail(BoardSelDto dto);

@@ -1,4 +1,4 @@
-package com.green.boardver4.Board.model;
+package com.green.boardver4.board.model;
 
 
 import lombok.Data;

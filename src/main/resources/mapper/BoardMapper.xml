@@ -2,15 +2,15 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.green.boardver4.Board.BoardMapper">
-    <insert id="InsBoard" useGeneratedKeys="true" keyProperty="iboard">
+<mapper namespace="com.green.boardver4.board.BoardMapper">
+    <insert id="insBoard" useGeneratedKeys="true" keyProperty="iboard">
         insert into t_board
         (title,ctnt,iuser)
         values
         (#{title},#{ctnt},#{iuser})
     </insert>
 
-    <select id="selBoard" resultType="BoardSelDto">
+    <select id="selBoard">
         select A.iboard, A.title, A.created_at createdAt
         , B.nm writer , B.main_pic writerMainPic
         FROM t_board A

@@ -1,11 +1,8 @@
-package com.green.boardver4.Board.model;
+package com.green.boardver4.board.model;
 
 import com.green.boardver4.cmt.model.CmtRes;
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
-
-import java.util.List;
 
 @Getter
 @Builder

@@ -1,13 +1,13 @@
-package com.green.boardver4.Board.model;
+package com.green.boardver4.board.model;
 
 import lombok.Data;
 
 @Data
-public class BoardEntity {
+public class BoardDetail {
     private int iboard;
     private String title;
     private String ctnt;
     private int iuser;
-    private String createdAt;
+    private String createAt;
     private String updateAt;
 }
